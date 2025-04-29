@@ -41,8 +41,7 @@
         }
 
         .admin-login {
-            margin: 20px auto;
-            text-align: center;
+            margin-left: 15px;
         }
 
         .admin-login a {
@@ -53,20 +52,51 @@
             border-radius: 5px;
             font-size: 16px;
         }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #444;
+        }
+
+        .nav-links a:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
     <!-- Header Section -->
     <header>
-        <h1>Mudang Tiffin Service</h1>
-        <p>Your daily dose of freshly cooked meals!</p>
+        <div class="header-container">
+            <div>
+                <h1>Mudang Tiffin Service</h1>
+                <p>Your daily dose of freshly cooked meals!</p>
+            </div>
+            <div class="admin-login">
+                <!-- Admin Login Button -->
+                <a href="admin_login.php">Admin Login</a>
+            </div>
+        </div>
         <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#menu">Our Menu</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#menu">Our Menu</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact Us</a>
+            </div>
         </nav>
     </header>
 
@@ -133,11 +163,6 @@
             <button type="submit">Submit</button>
         </form>
     </section>
-
-    <!-- Admin Login Button -->
-    <div class="admin-login">
-        <a href="admin_login.php">Admin Login</a>
-    </div>
 
     <!-- Footer Section -->
     <footer>
