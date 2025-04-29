@@ -6,6 +6,59 @@
     <title>Mudang Tiffin Service</title>
     <!-- Link to CSS file -->
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add additional styles to fix the submit button issue */
+        body {
+            position: relative;
+            min-height: 100vh;
+            margin: 0;
+            padding-bottom: 80px; /* Space for the footer */
+            box-sizing: border-box;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Ensure the form button is visible and styled */
+        #contact form button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #contact {
+            margin-bottom: 20px; /* Ensure space between form and footer */
+        }
+
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 400px;
+        }
+
+        #contact input, #contact textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #contact textarea {
+            resize: vertical;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -73,13 +126,13 @@
         <p><strong>Mrs. Mudang Akka</strong>, Owner</p>
         <p>Tel: 7640987251</p>
         <form action="save_message.php" method="post">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br>
-            <button type="submit" style="padding: 10px 20px; background-color: #333; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Submit</button>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Submit</button>
         </form>
     </section>
 
