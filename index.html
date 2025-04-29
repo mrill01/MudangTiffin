@@ -28,18 +28,6 @@
             cursor: pointer;
         }
 
-        #flash-message {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 10px;
-            background-color: #dff0d8;
-            color: #3c763d;
-            border: 1px solid #d6e9c6;
-            border-radius: 5px;
-            text-align: center;
-            display: none; /* Hidden by default */
-        }
-
         nav {
             display: flex;
             justify-content: center;
@@ -140,15 +128,13 @@
         </iframe>
     </section>
 
-    <!-- Flash Message -->
-    <div id="flash-message">Thank you for contacting, we will contact you soon.</div>
-
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
         <p><strong>Mrs. Mudang Akka</strong>, Owner</p>
         <p>Tel: 7640987251</p>
-        <form id="contact-form" action="https://formspree.io/f/your-form-id" method="post">
+        <form id="contact-form" action="https://formspree.io/f/manoqoee" method="post">
+            <input type="hidden" name="_redirect" value="https://mrill01.github.io/MudangTiffin/thank-you.html">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             <label for="email">Email:</label>
