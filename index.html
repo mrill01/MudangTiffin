@@ -40,8 +40,29 @@
             display: none; /* Hidden by default */
         }
 
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #444;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
         .admin-login {
-            margin-left: 15px;
+            display: flex;
+            justify-content: center;
+            margin-top: -10px;
         }
 
         .admin-login a {
@@ -53,26 +74,7 @@
             font-size: 16px;
         }
 
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #444;
-        }
-
-        .nav-links a:hover {
+        .admin-login a:hover {
             background-color: #555;
         }
     </style>
@@ -80,24 +82,17 @@
 <body>
     <!-- Header Section -->
     <header>
-        <div class="header-container">
-            <div>
-                <h1>Mudang Tiffin Service</h1>
-                <p>Your daily dose of freshly cooked meals!</p>
-            </div>
-            <div class="admin-login">
-                <!-- Admin Login Button -->
-                <a href="admin_login.php">Admin Login</a>
-            </div>
-        </div>
+        <h1>Mudang Tiffin Service</h1>
+        <p>Your daily dose of freshly cooked meals!</p>
         <nav>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#menu">Our Menu</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#contact">Contact Us</a>
-            </div>
+            <a href="#home">Home</a>
+            <a href="#menu">Our Menu</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact Us</a>
         </nav>
+        <div class="admin-login">
+            <a href="admin_login.php">Admin Login</a>
+        </div>
     </header>
 
     <!-- Home Section -->
