@@ -148,7 +148,7 @@
         <h2>Contact Us</h2>
         <p><strong>Mrs. Mudang Akka</strong>, Owner</p>
         <p>Tel: 7640987251</p>
-        <form id="contact-form" action="save_message.php" method="post" onsubmit="handleFormSubmission(event)">
+        <form id="contact-form" action="https://formspree.io/f/your-form-id" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             <label for="email">Email:</label>
@@ -168,18 +168,5 @@
             <a href="https://wa.me/+917640987251" target="_blank" style="color: yellow; font-weight: bold;">WhatsApp</a>
         </p>
     </footer>
-
-    <script>
-        // Handle form submission and display the flash message
-        function handleFormSubmission(event) {
-            event.preventDefault(); // Prevent default form submission
-            const flashMessage = document.getElementById('flash-message');
-            flashMessage.style.display = 'block'; // Show the flash message
-            setTimeout(() => {
-                flashMessage.style.display = 'none'; // Hide after 5 seconds
-            }, 5000);
-            document.getElementById('contact-form').submit(); // Continue form submission to the backend
-        }
-    </script>
 </body>
 </html>
