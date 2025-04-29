@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - View Messages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            color: #333;
+        }
+        .message {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .message p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Submitted Messages</h1>
+    <?php
+    // Check if the user is logged in
+    session_start();
+    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+        header('Location: login.html');
+        exit();
+    }
+
+    // Load messages from the file
+    $file_path = 'messages.json';
+    if (file_exists($file_path)) {
+        $messages = json_decode(file_get_contents($file_path), true);
+        if (!empty($messages)) {
+            foreach ($messages as $message) {
+                echo '<div class="message">';
+                echo '<p><strong>Name:</strong> ' . htmlspecialchars($message['name']) . '</p>';
+                echo '<p><strong>Email:</strong> ' . htmlspecialchars($message['email']) . '</p>';
+                echo '<p><strong>Message:</strong> ' . htmlspecialchars($message['message']) . '</p>';
+                echo '<p><small>Submitted on: ' . htmlspecialchars($message['timestamp']) . '</small></p>';
+                echo '</div>';
+            }
+        } else {
+            echo '<p>No messages found.</p>';
+        }
+    } else {
+        echo '<p>No messages found.</p>';
+    }
+    ?>
+</body>
+</html>
