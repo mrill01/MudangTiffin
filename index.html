@@ -4,31 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mudang Tiffin Service</title>
-    <!-- Link to CSS file -->
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Add additional styles to fix the submit button issue */
-        body {
-            position: relative;
-            min-height: 100vh;
-            margin: 0;
-            padding-bottom: 80px; /* Space for the footer */
-            box-sizing: border-box;
+        /* Ensure form is proportional to the overall page */
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Ensure the form button is visible and styled */
         #contact form button {
-            margin-top: 10px;
             padding: 10px 20px;
             background-color: #333;
             color: #fff;
@@ -37,26 +28,29 @@
             cursor: pointer;
         }
 
-        #contact {
-            margin-bottom: 20px; /* Ensure space between form and footer */
-        }
-
-        #contact form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-width: 400px;
-        }
-
-        #contact input, #contact textarea {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
+        #flash-message {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
             border-radius: 5px;
+            text-align: center;
+            display: none; /* Hidden by default */
         }
 
-        #contact textarea {
-            resize: vertical;
+        .admin-login {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .admin-login a {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -120,12 +114,15 @@
         </iframe>
     </section>
 
+    <!-- Flash Message -->
+    <div id="flash-message">Thank you for contacting, we will contact you soon.</div>
+
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
         <p><strong>Mrs. Mudang Akka</strong>, Owner</p>
         <p>Tel: 7640987251</p>
-        <form action="save_message.php" method="post">
+        <form id="contact-form" action="save_message.php" method="post" onsubmit="handleFormSubmission(event)">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             <label for="email">Email:</label>
@@ -136,6 +133,11 @@
         </form>
     </section>
 
+    <!-- Admin Login Button -->
+    <div class="admin-login">
+        <a href="admin.html">Admin Login</a>
+    </div>
+
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Mudang Tiffin Service</p>
@@ -145,5 +147,17 @@
             <a href="https://wa.me/+917640987251" target="_blank" style="color: yellow; font-weight: bold;">WhatsApp</a>
         </p>
     </footer>
+
+    <script>
+        // Handle form submission and display the flash message
+        function handleFormSubmission(event) {
+            event.preventDefault(); // Prevent default form submission
+            const flashMessage = document.getElementById('flash-message');
+            flashMessage.style.display = 'block'; // Show the flash message
+            setTimeout(() => {
+                flashMessage.style.display = 'none'; // Hide after 5 seconds
+            }, 5000);
+        }
+    </script>
 </body>
 </html>
